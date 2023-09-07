@@ -70,6 +70,6 @@ public class PreferredCustomer extends Customer {
      * */
     @Override
     public String toString() {
-        return super.toString() + "\namount purchased : " + this.amountPurchase +"\ndiscount : " + this.getDiscount();
+        return super.toString() + "\namount purchased : " + this.amountPurchase +"\ndiscount : " + (this.getDiscount() * 100) +"%";
     }
 }
