@@ -12,46 +12,18 @@ public class main {
         System.out.println("Enter employee's name : ");
         String Name = null;
         int ID = 0;
-        try {
-            Name = input.nextLine();
-            if(Name == null || Name.isEmpty()) {
-                throw new EmptyName();
-            }
-        } catch (EmptyName e) {
-            System.out.println(e.getMessage());
-        }
+        Name = input.nextLine();
         System.out.println("Enter employee's ID number : ");
-        try {
-            ID = input.nextInt();
-            if(ID <= 0) {
-                throw new InvalidID();
-            }
-        } catch (InvalidID e) {
-            System.out.println(e.getMessage());
-        }
+        ID = input.nextInt();
         Payroll Employee = new Payroll(Name, ID);
 
-        double Hours_Worked = 0, Pay_rate = 0;
+        double Hours_worked = 0, Pay_rate = 0;
         System.out.println("Enter employee's number of hours worked : ");
-        try {
-            Hours_Worked = input.nextDouble();
-            if(Hours_Worked < 0 || Hours_Worked > 84) {
-                throw new InvalidNumber();
-            }
-        } catch (InvalidNumber e) {
-            System.out.println(e.getMessage());
-        }
-        Employee.setHours_worked(Hours_Worked);
+        Hours_worked = input.nextDouble();
+        Employee.setHours_worked(Hours_worked);
 
         System.out.println("Enter employee's hourly pay rate : ");
-        try {
-            Pay_rate = input.nextDouble();
-            if(Pay_rate < 0 || Pay_rate > 25) {
-                throw new InvalidNumber();
-            }
-        } catch (InvalidNumber e) {
-            System.out.println(e.getMessage());
-        }
+        Pay_rate = input.nextDouble();
         Employee.setPay_rate(Pay_rate);
 
         System.out.println("Employee gross pay : " + Employee.gross_pay());
