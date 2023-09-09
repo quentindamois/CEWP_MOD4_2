@@ -71,8 +71,17 @@ public class RollingDice extends JFrame {
          * The file path are then used to load new dice prictures.
          * */
         public void actionPerformed(ActionEvent e) {
-            ImageIcon dice1Content = new ImageIcon(".\\Assignment2\\src\\GUIRollingDice\\dice" + (int)(Math.random() * 5) + ".png");
-            ImageIcon dice2Content = new ImageIcon(".\\Assignment2\\src\\GUIRollingDice\\dice" + (int)(Math.random() * 5) + ".png");
+            int tempoInt;
+            do {
+                tempoInt = (int) (Math.random() * 6);
+            }while (tempoInt > 5);
+            ImageIcon dice1Content = new ImageIcon(".\\Assignment2\\src\\GUIRollingDice\\dice" + tempoInt + ".png");
+            System.out.println(tempoInt);
+            do {
+                tempoInt = (int) (Math.random() * 6);
+            } while (tempoInt > 5);
+            ImageIcon dice2Content = new ImageIcon(".\\Assignment2\\src\\GUIRollingDice\\dice" +  tempoInt + ".png");
+            System.out.println(tempoInt);
             dice1.setIcon(dice1Content);
             dice2.setIcon(dice2Content);
         }
