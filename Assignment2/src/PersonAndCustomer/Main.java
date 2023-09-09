@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] arg) {
         String name = Security.safeNameInput("Enter the customer name :");
         String address = Security.safeNameInput("Enter enter the customer address :");
-        String telephone = Security.safePhoneNumberInput("Enter the customer's phone number :");
+        String telephone = Security.safePhoneNumberInput("Enter the customer's phone number in the international form :");
         int numberCustomer = Security.safeIntInput("Enter the customer number: ");
         boolean mail = Security.safeBooleanInput("Enter true if the customer is on the mailing list if no the enter false.");
         Customer customer1 = new Customer(numberCustomer, mail, name, telephone, address);
