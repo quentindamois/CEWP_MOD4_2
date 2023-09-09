@@ -28,11 +28,11 @@ public class RollingDice extends JFrame {
     /**
      * WINDOW_WIDTH is an int constant usede to define the window width.
      * */
-    private final int WINDOW_WIDTH = 700;
+    private final int WINDOW_WIDTH = 350;
     /**
      * WINDOW_HEIGHT is an int constant used to define the window height.
      * */
-    private final int WINDOW_HEIGHT = 350;
+    private final int WINDOW_HEIGHT = 250;
     /**
      * This is the constructor of the class RollingDice that is used to start the method that roll dice.
      * */
@@ -49,14 +49,16 @@ public class RollingDice extends JFrame {
      * */
     public void addContent() {
         this.panel = new JPanel();
+
         ImageIcon dice1Content = new ImageIcon(".\\Assignment2\\src\\GUIRollingDice\\dice" + (int)(Math.random() * 5) + ".png");
         ImageIcon dice2Content = new ImageIcon(".\\Assignment2\\src\\GUIRollingDice\\dice" + (int)(Math.random() * 5) + ".png");
-        this.dice1 = new JLabel(dice1Content);
-        this.dice2 = new JLabel(dice2Content);
+        Image tempoImage = dice1Content.getImage();
+        this.dice1 = new JLabel(new ImageIcon(tempoImage.getScaledInstance(150, 150, Image.SCALE_SMOOTH)));
+        tempoImage = dice2Content.getImage();
+        this.dice2 = new JLabel(new ImageIcon(tempoImage.getScaledInstance(150, 150, Image.SCALE_SMOOTH)));
         this.submit = new JButton("Roll");
 
         this.submit.addActionListener(new rolling());
-
         this.panel.add(dice1);
         this.panel.add(dice2);
         this.panel.add(submit);
@@ -80,8 +82,10 @@ public class RollingDice extends JFrame {
                 tempoInt = (int) (Math.random() * 6);
             } while (tempoInt > 5);
             ImageIcon dice2Content = new ImageIcon(".\\Assignment2\\src\\GUIRollingDice\\dice" +  tempoInt + ".png");
-            dice1.setIcon(dice1Content);
-            dice2.setIcon(dice2Content);
+            Image tempoImage = dice1Content.getImage();
+            dice1.setIcon(new ImageIcon(tempoImage.getScaledInstance(150, 150, Image.SCALE_SMOOTH)));
+            tempoImage = dice2Content.getImage();
+            dice2.setIcon(new ImageIcon(tempoImage.getScaledInstance(150, 150, Image.SCALE_SMOOTH)));
         }
     }
     /**
