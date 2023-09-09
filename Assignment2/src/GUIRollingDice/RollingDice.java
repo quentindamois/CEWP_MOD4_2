@@ -76,12 +76,10 @@ public class RollingDice extends JFrame {
                 tempoInt = (int) (Math.random() * 6);
             }while (tempoInt > 5);
             ImageIcon dice1Content = new ImageIcon(".\\Assignment2\\src\\GUIRollingDice\\dice" + tempoInt + ".png");
-            System.out.println(tempoInt);
             do {
                 tempoInt = (int) (Math.random() * 6);
             } while (tempoInt > 5);
             ImageIcon dice2Content = new ImageIcon(".\\Assignment2\\src\\GUIRollingDice\\dice" +  tempoInt + ".png");
-            System.out.println(tempoInt);
             dice1.setIcon(dice1Content);
             dice2.setIcon(dice2Content);
         }
