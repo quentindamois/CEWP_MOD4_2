@@ -64,7 +64,7 @@ public class Security {
     public static String safePhoneNumberInput(String question) {
         String res;
         try {
-            Pattern pattern = Pattern.compile("\\+\\d{0,1}-{0,1}\\d{1,3}\\s\\d{1,3}\\s\\d{2}\\s\\d{2}\\s\\d{2}\\s\\d{2}");
+            Pattern pattern = Pattern.compile("\\+\\d{0,1}-{0,1}\\d{1,3}\\s\\d{1,3}\\s\\d{2}\\s\\d{2}\\s\\d{2}\\s\\d{2}||\\+\\d{0,1}-{0,1}\\d{1,3}\\s\\d{1,3}\\s\\d{3,4}\\s\\d{4}");
             res = JOptionPane.showInputDialog(question);
             if (res == null) throw new wantToExit();
             Matcher matcher = pattern.matcher(res);
